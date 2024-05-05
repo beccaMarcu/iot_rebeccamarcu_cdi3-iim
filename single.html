@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="single.css">
+    
+
+    <title>page perso</title>
+</head>
+<body>
+
+
+    <div class="navbar"> <!-- j'ai crée une nav bar en haut avec 4 liens pour plus tard-->
+        <ul>
+            <li><a href="#">Home</a></li> 
+            <li><a href="#">Cards</a></li>
+            <li><a href="#">Game</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <img src="logo.png" alt="Logo" class="logo"> <!-- mettre un logo en haut-->
+    <div id="character"></div>
+    <script>
+
+            function fetchcharacter() { 
+            let url = window.location.search
+            let slug = new URLSearchParams(url).get('slug')
+            console.log(slug)
+             return fetch('https://hp-api.lainocs.fr/characters/' + slug)
+            .then((response) => response.json())
+            }
+            // nous avons crée une fonction qui va chercher les personnages à partir d'un slug
+            // ces slugs se trouvent l'api fournie en cours 
+            // à ce moment on peut voir les infos du cerveau dans la console
+ 
+            async function displayCharacter()
+             {
+                const data = await fetchcharacter()
+            document.querySelector('#character').innerHTML = `
+             
+                <h1>${data.name}</h1> 
+                <p>${data.house}</p>
+                <p>${data.actor}</p>
+                <img src="${data.image}" alt="${data.name}">
+                <a href="index.html">back</a>
+            `
+                
+                fetch('http://192.168.0.124:4000/', {'method': 'POST', 'headers': {'content-type': 'application/json'}, 'body': JSON.stringify({'house': data.house})});
+            }
+            // nous avons crée une fonction asynchrone puisqu'elle attend le await pour s'éxecuter
+            // puis on affiche le character dans l'html avec son nom, sa maison, le nom de l'acteur et
+            // l'image
+            //on a aussi crée un bouton back pour retourner à la page principale 
+
+            displayCharacter()
+
+
+    </script>
+</body>
+</html>

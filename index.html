@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hp.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cards</a></li>
+            <li><a href="#">Game</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <img src="logo.png" alt="Logo" class="logo"> 
+    <div id="characters" class="characters-container"></div>
+    <script>
+        function fetchCharacters() {
+            return fetch('https://hp-api.lainocs.fr/characters')
+                .then((response) => response.json());
+        }
+
+        async function displayCharacters() {
+            const data = await fetchCharacters();
+            const charactersContainer = document.querySelector('#characters');
+            data.forEach(character => {
+                charactersContainer.innerHTML += `
+                    <a href="single.html?slug=${character.slug}">
+                        <div class="characters">
+                            <h2>${character.name}</h2> 
+                            <img src="${character.image}" alt="${character.name}">
+                        </div>
+                    </a>`;
+            });
+        } // Là on va chercher toute la liste de personnages pas un personnage en particulier et 
+        //on va tous les afficher
+
+        displayCharacters();
+
+
+        
+    </script>
+</body>
+</html>

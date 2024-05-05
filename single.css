@@ -1,0 +1,96 @@
+
+h1, p, ul, li {
+    margin: 5px;
+    padding: 0;
+    font-size: 45;
+    text-align: center;
+   font-family: "jolly-lodger-regular", 
+}
+
+body {
+    background-color: #eeba30; 
+}
+
+.navbar {
+    background-color: #7f0909;
+    text-align: center;
+    padding: 15px;
+}
+
+.navbar li {
+    display: inline;}
+/*  * permet au texte d'être aligné sur la bar */
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+} /* j'ai changé la couleur du texte sur la nav bar ainsi que la taille*/
+
+
+/* je voulais ajouter le logo du site en haut à gauche */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#character {
+    max-width: 400px; 
+    max-width: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color:#7f0909;
+    margin-top: 50px;
+    border-radius: 10%;  
+}
+/* je voulais que la carte soit un centre de l'écran et qu'elle ne prenne pas trop de place
+ */
+
+#character img { 
+    max-width: 75%;
+    max-height: 75%; 
+    object-fit: contain;
+    display: block;
+    object-fit: center;
+} 
+/* comme toutes les images ne prennent pas la même place j'ai imposé une taille max
+et je voulais que l'image soit au milieu de la carte*/
+#character a {
+    display: block;
+    margin-top: 20px;
+    color: #7f0909;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+} 
+/* j'ai repris la charte de HP et je voulais que le texte soit 
+centré sur la carte */
+
+.jolly-lodger-regular {
+    font-family: "Jolly Lodger", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "jolly-lodger-regular";
+    src: url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+} /* je voulais rajouter une police mais j'ai pas réussi à la mettre */
+
+
+
+a[href="index.html"] {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin:10px ;
+    font-size: large;
+}
+/* j'ai voulu mettre le bouton back en bas à gauche

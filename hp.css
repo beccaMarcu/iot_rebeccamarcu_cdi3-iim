@@ -1,0 +1,66 @@
+ h1, h2, p, ul, li {
+    margin: 5;
+    padding: 0;
+}
+
+body{
+    background-color: #eeba30;
+}
+
+
+.navbar {
+    background-color: #7f0909;
+    text-align: center;
+    padding: 15px ; 
+    
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff; 
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.characters-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;}
+    /*  je voulais afficher trois cartes par lignes*/
+    
+    .characters {
+        width: 450px; 
+        height: 600px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        background-color: #7f0909;
+        border-radius: 10%;
+        margin: 5%;
+        text-align: center;
+    }
+    /* presque les mêmes dimensions + cartes arrondies*/
+    
+    .characters img {
+        width: 75%; 
+        height: auto; 
+        max-width: 75%;
+        max-height: 75%; 
+        object-fit: contain;
+    }
+/* je voulais que l'image soit la plus centrée
+possible
